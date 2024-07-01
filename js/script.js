@@ -19,34 +19,36 @@ btnNavEl.addEventListener("click", function () {
 ////////////////////////////////////////////////
 // Smooth scrolling animation
 
-const allLinks = document.querySelectorAll("a:link");
+const allLinks = document.querySelectorAll('a:link');
 
-allLinks.forEach(function (link) {
-  link.addEventListener("click", function (e) {
+allLinks.forEach(link => {
+  link.addEventListener('click', e => {
     e.preventDefault();
-    const href = link.getAttribute("href");
+    const href = link.getAttribute('href');
+
     // Scroll back to top
-    if (href === "#") {
+    if (href === '#') {
       window.scrollTo({
         top: 0,
-        behavior: "smooth",
+        behavior: 'smooth',
       });
     }
 
-    // Scroll to other links
-    if (href !== "#" && href.startsWith("#")) {
+    // Scroll to other sections
+    if (href.startsWith('#') && href !== '#') {
       const sectionEl = document.querySelector(href);
       sectionEl.scrollIntoView({
-        behavior: "smooth",
+        behavior: 'smooth',
       });
     }
 
     // Close the mobile navigation
-    if (link.classList.contains("main-nav-link")) {
-      headerEl.classList.toggle("nav-open");
+    if (link.classList.contains('main-nav-link')) {
+      headerEl.classList.toggle('nav-open');
     }
   });
 });
+
 
 ////////////////////////////////////////////////
 // Sticky header
