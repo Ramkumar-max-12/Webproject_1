@@ -36,10 +36,10 @@ jobs:
  
     - name: Build Docker image
 
-      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/my-web-project:latest .
+      run: docker build -t ramkumarmax12/my-web-project:latest .
  
     - name: Push Docker image
 
-      run: docker push ${{ secrets.DOCKER_USERNAME }}/my-web-project:latest
+      run: docker push ramkumarmax12/my-web-project:latest
 
  
